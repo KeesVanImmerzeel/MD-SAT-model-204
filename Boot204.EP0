@@ -1,0 +1,82 @@
+************* EParray[ cEP0 ]: DefaultBootFile *********************************
+5              Aantal tijdsonafhankelijke tabellen (=xInDep)
+0             ***table 0: table-type 0 (no interpolation) 
+20  1         ***table 0: cNr_TINTode_Create_Settings (rows), 1 columns
+1             1:  IAlgRout      Algorithm-routine for integration                      1=Euler;       2=Runge-Kutta
+1             2:  IStepRout     Stepper-routine for integration                        1=CrudeStep;   2= Rkqc
+3             3:  IDCRoot       Functie voor het insluiten van een discontinuiteit     1=DCCrudeRoot; 2=DCzbrent; 3=DCbisection
+1             4:  IDCStepRout   Stepper-routine voor modellen met discontinuiteiten    1=DefaultDCStep
+1             5:  IDriver       Driver-routine for integration                         1=OdeInt
+1             6:  I_nsubstep    Aantal sub-stappen in sommige algorithme-routines
+1             7:  I_nstep       Aantal sub-stappen in sommige stepper-routines
+1000          8:  I_maxstp      Max. aantal stappen idem
+0.01          9:  I_htry        Initiele stapgrootte
+0.00001       10: I_hmin        Minimale stapgrootte
+0.01           11: I_eps         Tolerantie
+0             12: cModelID               * WORDT OVERSCHREVEN DOOR BOOT-PROCEDURE
+0             13: ReadyToRun             * WORDT OVERSCHREVEN DOOR BOOT-PROCEDURE
+0             14: cNrOfRPs               * WORDT OVERSCHREVEN DOOR BOOT-PROCEDURE
+0             15: cNrOfSQRQs             * WORDT OVERSCHREVEN DOOR BOOT-PROCEDURE
+0             16: cNrOfAvSpeedsToExport  * WORDT OVERSCHREVEN DOOR BOOT-PROCEDURE
+1             17: Area: wordt in Shell-omgeving vervangen door Shell-waarde
+0             18: Current_xs             * WORDT OVERSCHREVEN DOOR BOOT-PROCEDURE
+0             19: nDC                    * WORDT OVERSCHREVEN DOOR BOOT-PROCEDURE
+0             20: GERESERVEERD
+0             ***table 1: table-type 0 (no interpolation) 
+19  11        ***table 1: NrOfDepVar (rows), cNrOfDepVarOptions columns;  
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 1 ];  dV: Storage deficit (m)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 2 ];  dG: Groundwater depth (m-mv)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 3 ];  hQ: Level quickflow reservoir (m)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 4 ];  W: Wetness index (-)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 5 ];  BdV: Evapotranspiration reduction factor (-)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 6 ];  dVeq: Equilibrium storage deficit (m) 
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 7 ];  P:(=PQ+PV): Precipitation (m/d)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 8 ];  ETpot: Actual evapotranspiration (m/d)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 9 ];  fXG: Seepage (up/down)/extraction (m/d)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 10 ]; Eact: Actual evapotranspiration (m/d)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 11 ]; Q1: Discharge of groundwater to/from primary drainage system (m/d)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 12 ]; Q2: Discharge of groundwater to/from secundary drainage system (m/d)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 13 ]; Q3: Discharge of groundwater to/from tertiary drainage system (m/d)
+0   2 0 0 0 0    1 1 1 1 1 ystart[ 14 ]; fGS: Discharge of groundwater to/from drainage system (=Q1+Q2+Q3) (m/d)
+0   2 0 0 0 0    1 1 1 1 1 ystart[ 15 ]; fQS: Quickflow (m/d)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 16 ]; PV: PV: Precipitation into vadose zone = P.(1-W) (m/d)
+0   0 0 0 0 0    1 1 1 1 1 ystart[ 17 ]; PQ: PQ: Precipitation into quickflow reservoir (m/d)
+0   1 0 0 0 0    1 1 1 1 1 ystart[ 18 ]; PHIT: Phreatic head = SL-dG (m+ref)
+0   1 0 0 0 0    1 1 1 1 1 ystart[ 19 ]; Err: Water balance error (m)
+0             ***table 2: table-type 0 (no interpolation) 
+18  2         ***table 2: rows, columns; Min/max values 
+0 2.4         1: P (m/d)     Er van uitgaande dat neerslag op uurbasis wordt ingebracht en een max. intensiteit van 100 mm/uur (2.4=100x24/1000)
+0 0.006       2: ETpot (m/d) Er van uitgaande dat verdamping op decadebasis wordt ingebracht en een max. intensiteit van 60 mm/decade (0.006= 60/(10x1000))
+-0.02 0.02    3: fXG, Seepage (up/down)/extraction (m/d)   
+1 13          4: Soil
+0.01 1e20     5: cQ: Quickflow reservoir constant (d) KALIBRATIE PARAMETER
+-1e20 1e20    6: SL: Surface level (m+ref)
+-1e20 1e20    7: Hp: controlled or polder water level (m+ref) 
+1  1e20       8: Wd1: drainage resistance of primary drainage system (d)
+1  1e20       9: Wd2: drainage resistance of secondary drainage system (d)
+1  1e20       10: Wd3: drainage resistance of tertiary drainage system (d)
+1  1e20       11: Wi1: infiltration resistance of primary drainage system (d)
+1  1e20       12: Wi2: infiltration resistance of secondary drainage system (d)
+1  1e20       13: Wi3: infiltration resistance of tertiary drainage system (d)
+-1e20 1e20    14: BD1: base elevation of primary drainage system (m+ref) 
+-1e20 1e20    15: BD2: base elevation of secondary drainage system (m+ref) 
+-1e20 1e20    16: BD3: base elevation of tertiary drainage system (m+ref) 
+-1e20 1e20    17: PHIT_init: Initial phreatic head (m+ref)
+0.01 0.9      18: cW: Wetness Index parameter (m) KALIBRATIE PARAMETER Als groter relatief meer quickflow
+0             ***table 3: table-type 0 (no interpolation)
+11 4          ***table 3: Soil parameters  
+4.05  0.121 0.395 4  1 sand                          Column 1: b = Pore size distribution parameter (-)
+4.38  0.090  0.41 4  2 loamy_sand                    Column 2: psi_ae = Air entry pressure (m)
+4.9   0.218 0.435 4  3 sandy_loam                    Column 3: theta_s = Soil moisture content at saturation (-)
+5.3   0.786 0.485 4  4 silt_loam                     Column 4: cV = Vadose zone relaxation time (h); KALIBRATIE PARAMETER als groter --> gedempte reactie; Relatief ongevoelige parameter
+5.39  0.478 0.451 4  5 loam                          
+7.12  0.299 0.42  4  6 sandy_clay_loam
+7.75  0.356 0.477 4  7 silt_clay_loam
+8.52  0.630 0.476 4  8 clay_loam
+10.4  0.153 0.426 4  9 sandy_clay
+10.4  0.490 0.492 4  10 silty_clay
+11.4  0.405 0.482 4  11 clay
+0             ***table 4: table-type 0 (no interpolation)
+1 2           ***table 4: Parameters in ET reduction function   
+20   0.4       zeta1 (Curvature), zeta2 (Translation)
+0             Aantal tijdsafhankelijk (xy)-tabellen **********************************
